@@ -12,13 +12,14 @@ const shopOrderRouter = require('./routes/shop/order-routes')
 const shopSearchRouter = require('./routes/shop/search-routes')
 const shopReviewRouter = require('./routes/shop/review-routes')
 const commonFeatureRouter = require("./routes/common/feature-routes")
+require('dotenv').config();
 
 
 const app = express();
 const port = process.env.PORT || 9000;
 
 //database connection 
-mongoose.connect('mongodb+srv://mamidalashivasai789:Om4Jo9LjFgrqG4H8@cluster0.0exx6.mongodb.net/')
+mongoose.connect(process.env.MONGO_URI)
 .then(
     () =>  console.log('connected to database'),
 ).catch((error) =>
