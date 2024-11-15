@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
@@ -12,7 +14,7 @@ const shopOrderRouter = require('./routes/shop/order-routes')
 const shopSearchRouter = require('./routes/shop/search-routes')
 const shopReviewRouter = require('./routes/shop/review-routes')
 const commonFeatureRouter = require("./routes/common/feature-routes")
-require('dotenv').config();
+
 
 
 const app = express();
@@ -28,7 +30,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use(
     cors({
-        origin: 'http://localhost:5173',
+        origin: process.env.CLIENT_BASE_URL,
         methods: ['GET','POST','PUT','DELETE'],
         allowedHeaders: [
             "Content-Type",
