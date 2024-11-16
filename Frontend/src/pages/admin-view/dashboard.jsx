@@ -31,6 +31,7 @@ function AdminDashboard() {
 
   return (
     <div>
+      <h1 className="text-xl font-bold">Banner Images</h1>
       <ProductImageUpload
         imageFile={imageFile}
         setImageFile={setImageFile}

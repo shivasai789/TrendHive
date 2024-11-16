@@ -18,7 +18,7 @@ function AdminHeader({setOpen}) {
 
 
   return (
-    <header className="flex item-center justify-between px-4 py-3 bg-background border-bottom ">
+    <header className="flex item-center justify-between px-4 py-3 bg-background border-bottom">
       <Button onClick={() => setOpen(true)} className="lg:hidden sm:block bg-black text-white hover:bg-black border-0 rounded">
         <Menu />
         <span className="sr-only">Toggle Menu</span>

@@ -61,7 +61,7 @@ app.use('/api/common/feature',commonFeatureRouter)
 
 
 app.listen(port,() => {
-    console.log("Server is running...")
+    console.log(`Server is running on ${port}`)
 })
 
 
