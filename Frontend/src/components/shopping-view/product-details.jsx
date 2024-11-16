@@ -6,12 +6,12 @@ import { StarIcon } from "lucide-react";
 import { Input } from "../ui/input";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, fetchCartItems } from "@/store/shop/cart-slice";
-import { useToast } from "@/hooks/use-toast";
 import { setProductDetails } from "@/store/shop/products-slice";
 import { Label } from "../ui/label";
 import StarRatingComponent from "../common/star-rating";
 import { useEffect, useState } from "react";
 import { addReview, getReviews } from "@/store/shop/review-slice";
+import { useToast } from "@/hooks/use-toast";
 
 function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const dispatch = useDispatch();
@@ -30,10 +30,16 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
       reviewMessage: reviewMsg,
       reviewValue: rating
     })).then((data) => {
-      console.log(data);
+      // console.log(data);
       if(data.payload.success){
         toast({
           title: 'Review added successfully!'
+        })
+      }
+      else{
+        toast({
+          title: "Write review after purchasing product",
+          variant: "destructive"
         })
       }
       
@@ -102,7 +108,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
 
   return (
     <Dialog open={open} onOpenChange={handleDialogClose}>
-      <DialogContent className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:p-12 sm:max-w-[600px] lg:max-w-[70vw] max-h-[97vh]  overflow-y-auto">
+      <DialogContent className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:p-12 w-full sm:max-w-[90vw] md:max-w-[80vw] lg:max-w-[70vw] max-h-[97vh]  overflow-y-auto">
         <div className="relative rounded-lg">
           <img
             src={productDetails?.image}
