@@ -20,7 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "../ui/avatar";
-import { logoutUserAction } from "@/store/auth-slice";
+import { logoutUserAction, resetTokenAndCredentials } from "@/store/auth-slice";
 import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
@@ -70,7 +70,10 @@ function HeaderRightContent() {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logoutUserAction());
+    // dispatch(logoutUserAction());
+    dispatch(resetTokenAndCredentials())
+    sessionStorage.clear()
+    navigate('/auth/login')
   };
 
   useEffect(() => {
