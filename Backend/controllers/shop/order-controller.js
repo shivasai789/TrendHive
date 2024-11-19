@@ -96,7 +96,7 @@ const createOrder = async (req, res) => {
 
 const capturePayment = async (req, res) => {
   try {
-    const { paymentId, orderId, payerId } = req.body;
+    const { paymentId, payerId, orderId } = req.body;
 
     let order = await Order.findById(orderId);
 
@@ -116,7 +116,7 @@ const capturePayment = async (req, res) => {
       let product  = await Product.findById(item.productId)
 
       if(!product){
-        res.status(404).json({
+        return res.status(404).json({
           success: false,
           message: `${product.title} is out of stock!`,
         });
@@ -171,7 +171,7 @@ const getAllOrdersByUser = async (req,res) => {
     console.log(e);
     res.status(500).json({
       success: false,
-      message: "Some Error Occured!",
+      message: "Some Error occured!",
     });
   }
 }

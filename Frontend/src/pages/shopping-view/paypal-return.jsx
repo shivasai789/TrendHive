@@ -33,8 +33,11 @@ function PaypalReturnPage() {
 
     },[payerId,paymentId,dispath])
 
+    console.log(payerId,paymentId,'paymentId');
+    
+
     return ( 
-        <Card>
+        <Card className="mt-20">
             <CardHeader>
                 <CardTitle>
                     Proccessing Payment...Please wait

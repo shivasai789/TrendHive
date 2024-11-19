@@ -4,7 +4,7 @@
 
 function PaymentSuccessPage() {
     return ( 
-        <div>Payment Successfull</div>
+        <div className="mt-30">Payment Successfull</div>
      );
 }
 
