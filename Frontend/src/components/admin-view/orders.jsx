@@ -46,7 +46,6 @@ function AdminOrdersView() {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto md:overflow-hidden">
         <Table>
           <TableHeader>
             <TableRow>
@@ -109,7 +108,6 @@ function AdminOrdersView() {
               : null}
           </TableBody>
         </Table>
-        </div>
       </CardContent>
         </Card>
      );
