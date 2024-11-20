@@ -5,12 +5,8 @@ import { Tabs } from "@radix-ui/react-tabs";
 
 function AdminOrders() {
     return ( 
-        <div>
-            <Tabs>
-            <TabsContent>
+        <div className="container mx-auto grid grid-cols-1 gap-8 py-8">
             <AdminOrdersView/>
-            </TabsContent>
-            </Tabs>
         </div>
      );
 }

@@ -39,7 +39,7 @@ function ShoppingOrders() {
     }
   }, [orderDetails]);
 
-  console.log(user?.id, "order");
+  // console.log(user?.id, "order");
 
   return (
     <Card>
