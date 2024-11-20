@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import PulseLoader from "react-spinners/esm/PulseLoader";
+import noResults from "../../assets/no-results.png"
 
 function SearchProducts() {
   const [keyword, setKeyword] = useState("");
@@ -90,7 +91,7 @@ function SearchProducts() {
   console.log(searchResults, "searchResults");
 
   return (
-    <div className="container mx-auto md:px-6 px-4 py-8">
+    <div className="container mx-auto md:px-6 px-4 py-8 mt-14">
       <div className="flex justify-center mb-8">
         <div className="w-full flex items-center">
           <Input
@@ -103,7 +104,12 @@ function SearchProducts() {
         </div>
       </div>
       {!searchResults.length ? (
-        <h1 className="text-5xl font-extrabold">No result found!</h1>
+        <div className="flex justify-center items-center min-h-[70vh]">
+          <div>
+          <img src={noResults} alt="no-results" height={200} width={200} />
+          <h1 className="text-2xl mt-5">No Results Found!</h1>
+        </div>
+        </div>
       ) : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {searchResults.map((item) => (

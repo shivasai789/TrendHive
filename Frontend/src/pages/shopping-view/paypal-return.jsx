@@ -3,6 +3,7 @@ import { capturePayment } from "@/store/shop/order-slice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import paymentProcessing from "../../assets/payment-app.gif"
 
 
 
@@ -37,13 +38,12 @@ function PaypalReturnPage() {
     
 
     return ( 
-        <Card className="mt-20">
-            <CardHeader>
-                <CardTitle>
-                    Proccessing Payment...Please wait
-                </CardTitle>
-            </CardHeader>
-        </Card>
+        <div className="flex justify-center items-center min-h-screen">
+            <div className="mt-20">
+                    <img className="mx-auto" src={paymentProcessing} alt="paymentProcessing" height={250} width={250} />
+                    <p>Proccessing Payment... Please wait</p>
+        </div>
+        </div>
      );
 }
 

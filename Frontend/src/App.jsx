@@ -25,6 +25,7 @@ import PaymentSuccessPage from "./pages/shopping-view/payment-success";
 import SearchProducts from './pages/shopping-view/search';
 import { ThreeDots } from "react-loader-spinner";
 import PulseLoader from './../node_modules/react-spinners/esm/PulseLoader';
+import PaypalCancelPage from "./pages/shopping-view/paypal-cancel";
 
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           <Route path="checkout" element={<ShoppingCheckout />} />
           <Route path="account" element={<ShoppingAccount />} />
           <Route path="paypal-return" element={<PaypalReturnPage />} />
+          <Route path="paypal-cancel" element={<PaypalCancelPage />} />
           <Route path="payment-success" element={<PaymentSuccessPage />} />
           <Route path="search" element={<SearchProducts />} />
         </Route>
